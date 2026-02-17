@@ -1,0 +1,37 @@
+{
+  "name": "spider-browser-examples",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Web scraping examples using spider-browser — Amazon, Walmart, Google, LinkedIn, YouTube, and more",
+  "scripts": {
+    "amazon": "tsx amazon-scraper.ts",
+    "walmart": "tsx walmart-scraper.ts",
+    "ebay": "tsx ebay-scraper.ts",
+    "target": "tsx target-scraper.ts",
+    "costco": "tsx costco-scraper.ts",
+    "homedepot": "tsx homedepot-scraper.ts",
+    "google": "tsx google-search-scraper.ts",
+    "google-play": "tsx google-play-scraper.ts",
+    "google-jobs": "tsx google-jobs-scraper.ts",
+    "indeed": "tsx indeed-scraper.ts",
+    "glassdoor": "tsx glassdoor-scraper.ts",
+    "expedia": "tsx expedia-scraper.ts",
+    "zillow": "tsx zillow-scraper.ts",
+    "airbnb": "tsx airbnb-scraper.ts",
+    "tripadvisor": "tsx tripadvisor-scraper.ts",
+    "google-news": "tsx google-news-scraper.ts",
+    "youtube": "tsx youtube-scraper.ts",
+    "reddit": "tsx reddit-scraper.ts",
+    "linkedin": "tsx linkedin-scraper.ts",
+    "yelp": "tsx yelp-scraper.ts",
+    "chatgpt": "tsx chatgpt-scraper.ts"
+  },
+  "dependencies": {
+    "spider-browser": "^0.2.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.5.0"
+  }
+}
