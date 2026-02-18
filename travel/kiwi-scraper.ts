@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.kiwi.com/en/search/results/new-york-united-states/london-united-kingdom/2026-06-15");
 await page.content(12000);

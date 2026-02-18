@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://papers.ssrn.com/sol3/results.cfm?RequestTimeout=50000000&txtKey_Words=fintech");
 await page.content(10000);

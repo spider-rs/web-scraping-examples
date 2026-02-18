@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.cruisecritic.com/cruiseto/cruiseitineraries.cfm?port=702");
 await page.content(10000);

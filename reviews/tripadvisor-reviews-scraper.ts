@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.tripadvisor.com/Hotel_Review-g60763-d93450-Reviews-The_Peninsula_New_York-New_York_City_New_York.html");
 await page.content(10000);

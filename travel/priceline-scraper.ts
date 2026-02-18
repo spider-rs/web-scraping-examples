@@ -14,7 +14,7 @@ const spider = new SpiderBrowser({
   captcha: "solve",
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.priceline.com/relax/in/3000019787/from/20260601/to/20260605/rooms/1");
 await page.content(15000);

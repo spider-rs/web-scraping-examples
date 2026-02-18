@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M");
 await page.content(12000);

@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.noon.com/uae-en/electronics-and-mobiles/mobiles-and-accessories/mobiles/");
 await page.content(10000);

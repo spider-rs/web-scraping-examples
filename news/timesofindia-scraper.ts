@@ -1,7 +1,7 @@
 /**
  * Times of India Scraper
  *
- * Extract Indian news, cricket scores, and Bollywood coverage from Times of India 
+ * Extract Indian news, cricket scores, and Bollywood coverage from Times of India
  *
  * Usage: SPIDER_API_KEY=sk-... npx tsx timesofindia-scraper.ts
  */
@@ -13,18 +13,18 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://timesofindia.indiatimes.com/india/budget-2024-highlights");
 
 const data = await page.extractFields({
-  headline: "h1.HNMDR, h1._23498",
-  author: ".xf8Pm a, ._3Mkg- a",
-  date: "time[datetime], .xf8Pm time, ._3Mkg- span",
-  summary: "._2NFXP, .article-desc",
-  body: "._s30J, .ga-articletext, [data-articlebody]",
-  city: ".byline-city, ._3Mkg-",
-  image: { selector: "._3sGpx img, .article-img img", attribute: "src" },
+  headline: "h1[itemprop='headline'], h1",
+  author: "[itemprop='author'] a, [rel='author']",
+  date: "time[datetime], [itemprop='datePublished']",
+  summary: "[itemprop='description'], .article-desc, meta[name='description']",
+  body: "[itemprop='articleBody'], [data-articlebody], article",
+  city: ".byline-city, [itemprop='contentLocation']",
+  image: { selector: "[itemprop='image'] img, article img", attribute: "src" },
 });
 
 console.log(data);

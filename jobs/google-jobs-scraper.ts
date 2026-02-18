@@ -15,7 +15,7 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
   stealth: 2,
 });
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 
 await page.goto(
@@ -25,11 +25,12 @@ await page.content(10000);
 
 const data = await page.evaluate(`(() => {
   const jobs = [];
-  document.querySelectorAll(".PwjeAc").forEach(el => {
-    const title = el.querySelector(".BjJfJf")?.textContent?.trim();
-    const company = el.querySelector(".vNEEBe")?.textContent?.trim();
-    const location = el.querySelector(".Qk80Jf")?.textContent?.trim();
-    if (title) jobs.push({ title, company, location });
+  document.querySelectorAll("li[data-ved], [jscontroller] li").forEach(el => {
+    const title = el.querySelector("h3, [role='heading']")?.textContent?.trim();
+    const company = el.querySelector("div[class] > div:nth-child(2)")?.textContent?.trim();
+    const location = el.querySelector("div[class] > div:nth-child(3)")?.textContent?.trim();
+    const posted = el.querySelector("span[aria-label$='ago'], time")?.textContent?.trim();
+    if (title) jobs.push({ title, company, location, posted });
   });
   return JSON.stringify({ total: jobs.length, jobs: jobs.slice(0, 10) });
 })()`);

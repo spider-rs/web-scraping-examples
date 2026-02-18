@@ -12,7 +12,7 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://marketplace.visualstudio.com/search?target=VSCode&category=All%20categories&sortBy=Installs");
 await page.content(10000);

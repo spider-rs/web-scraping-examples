@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://tidal.com/browse/playlist/2650ac82-e1bc-4c0a-a0cc-8b08e7174e40");
 await page.content(10000);

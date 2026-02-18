@@ -12,7 +12,7 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.iseecars.com/used-cars/used-toyota-camry-for-sale");
 await page.content();

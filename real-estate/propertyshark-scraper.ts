@@ -14,7 +14,7 @@ const spider = new SpiderBrowser({
   captcha: "solve",
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.propertyshark.com/mason/Property/123-Main-St-New-York-NY/");
 await page.content(10000);

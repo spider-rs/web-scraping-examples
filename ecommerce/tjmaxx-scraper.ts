@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://tjmaxx.tjx.com/store/shop/women/shoes/_/N-3632025137");
 await page.content();

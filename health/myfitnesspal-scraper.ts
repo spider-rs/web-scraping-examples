@@ -12,7 +12,7 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.myfitnesspal.com/food/search?search=chicken+breast");
 await page.content(8000);

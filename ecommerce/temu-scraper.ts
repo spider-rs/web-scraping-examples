@@ -14,7 +14,7 @@ const spider = new SpiderBrowser({
   captcha: "solve",
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.temu.com/search_result.html?search_key=headphones");
 await page.content(10000);

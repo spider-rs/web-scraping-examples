@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.monster.com/jobs/search?q=marketing+manager&where=Los+Angeles%2C+CA");
 await page.content(10000);

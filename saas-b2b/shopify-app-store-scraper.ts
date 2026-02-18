@@ -12,7 +12,7 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://apps.shopify.com/browse/store-design-page-builders");
 await page.content(10000);

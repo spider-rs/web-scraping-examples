@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://lensa.com/jobs/software-engineer/san-francisco-ca");
 await page.content(10000);

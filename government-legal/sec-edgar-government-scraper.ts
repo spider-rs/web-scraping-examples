@@ -12,7 +12,7 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=apple&CIK=&type=10-K&dateb=&owner=include&count=10&search_text=&action=getcompany");
 await page.content();

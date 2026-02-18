@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://tools.usps.com/go/TrackConfirmAction?tLabels=9400111899223033005282");
 await page.content(10000);

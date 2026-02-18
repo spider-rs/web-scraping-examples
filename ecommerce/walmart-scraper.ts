@@ -16,7 +16,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
   captcha: "solve",
 });
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 
 await page.goto(

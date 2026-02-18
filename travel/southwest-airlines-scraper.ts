@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.southwest.com/air/booking/select.html?originationAirportCode=DAL&destinationAirportCode=HOU&departureDate=2026-07-01");
 await page.content(15000);

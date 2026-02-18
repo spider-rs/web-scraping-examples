@@ -14,7 +14,7 @@ import { SpiderBrowser } from "spider-browser";
 const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
 });
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 
 // Replace with any public ChatGPT share link

@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.spirit.com/book/flights?orgCode=FLL&destCode=LGA&departDate=2026-07-20&ADT=1&returnDate=&promoCode=&UMNR=0");
 await page.content(12000);

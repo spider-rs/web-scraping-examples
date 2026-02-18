@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://sam.gov/search/?index=opp&sort=-modifiedDate&page=1&pageSize=25");
 await page.content(10000);

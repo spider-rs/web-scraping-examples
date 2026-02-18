@@ -14,17 +14,18 @@ const spider = new SpiderBrowser({
   captcha: "solve",
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.lazada.com.ph/catalog/?q=headphones");
 await page.content(12000);
 
 const data = await page.evaluate(`(() => {
   const items = [];
-  document.querySelectorAll("[data-qa-locator='product-item']").forEach(el => {
-    const name = el.querySelector(".RfADt a")?.textContent?.trim();
-    const price = el.querySelector(".ooOxS")?.textContent?.trim();
-    const rating = el.querySelector(".qzqFw")?.textContent?.trim();
+  document.querySelectorAll("[data-qa-locator='product-item'], [data-tracking='product-card']").forEach(el => {
+    const name = el.querySelector("a[title]")?.getAttribute("title")?.trim()
+      || el.querySelector("a")?.textContent?.trim();
+    const price = el.querySelector("span[data-price], [data-qa-locator='product-price']")?.textContent?.trim();
+    const rating = el.querySelector("[aria-label*='rating'], [aria-label*='star']")?.getAttribute("aria-label");
     if (name) items.push({ name, price, rating });
   });
   return JSON.stringify({ total: items.length, items: items.slice(0, 10) });

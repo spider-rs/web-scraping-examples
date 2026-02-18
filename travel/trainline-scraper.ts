@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.thetrainline.com/book/results?journeySearchType=single&origin=urn%3Atrainline%3Ageneric%3Aloc%3A5696&destination=urn%3Atrainline%3Ageneric%3Aloc%3A4916&outwardDate=2026-07-01T09%3A00%3A00");
 await page.content(12000);

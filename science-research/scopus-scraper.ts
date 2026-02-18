@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.scopus.com/results/results.uri?sort=plf-f&src=s&st1=blockchain&nlo=&nlr=&nls=&sid=&sot=b&sdt=b&sl=25&s=TITLE-ABS-KEY(blockchain)");
 await page.content(10000);

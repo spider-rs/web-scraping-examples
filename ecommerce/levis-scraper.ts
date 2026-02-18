@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.levi.com/US/en_US/clothing/men/jeans/c/levi_clothing_men_jeans");
 

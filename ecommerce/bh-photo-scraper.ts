@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.bhphotovideo.com/c/buy/Mirrorless-Cameras/ci/29912/N/4288586282");
 await page.content();

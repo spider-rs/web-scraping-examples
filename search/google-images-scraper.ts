@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.google.com/search?tbm=isch&q=web+scraping+diagram");
 await page.content(10000);
@@ -23,8 +23,9 @@ const data = await page.evaluate(`(() => {
   document.querySelectorAll("[data-id]").forEach(el => {
     const title = el.querySelector("h3")?.textContent?.trim();
     const source = el.querySelector("a[href]")?.getAttribute("href");
-    const thumbnail = el.querySelector("img[data-src], img[src]")?.getAttribute("src");
-    const domain = el.querySelector(".fGlcse")?.textContent?.trim();
+    const thumbnail = el.querySelector("img[data-src]")?.getAttribute("data-src")
+      || el.querySelector("img[src]")?.getAttribute("src");
+    const domain = el.querySelector("cite, a[href] span")?.textContent?.trim();
     if (title || thumbnail) images.push({ title, source, thumbnail, domain });
   });
   return JSON.stringify({ total: images.length, images: images.slice(0, 15) });

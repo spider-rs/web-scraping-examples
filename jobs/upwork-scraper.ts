@@ -14,7 +14,7 @@ const spider = new SpiderBrowser({
   captcha: "solve",
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.upwork.com/nx/search/jobs/?q=react+developer&sort=recency");
 await page.content(12000);

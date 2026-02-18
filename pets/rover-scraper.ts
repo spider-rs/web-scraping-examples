@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.rover.com/search/?service_type=overnight-boarding&location=Chicago%2C+IL");
 await page.content(10000);

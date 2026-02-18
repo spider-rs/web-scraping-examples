@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.hilton.com/en/search/hilton/?query=Chicago&arrivalDate=2026-06-01&departureDate=2026-06-04");
 await page.content(12000);

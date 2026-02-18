@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.autozone.com/motor-oil-and-transmission-fluid/motor-oil/mobil-1-advanced-full-synthetic-motor-oil-5w-30-5-quart/953876_0_0");
 await page.content();

@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.aa.com/booking/search?locale=en_US&pax=1&type=OneWay&searchType=Revenue&cabin=&carriers=ALL&slices=%5B%7B%22orig%22:%22DFW%22,%22dest%22:%22MIA%22,%22origNearby%22:false,%22destNearby%22:false,%22date%22:%222026-07-10%22%7D%5D");
 await page.content(15000);

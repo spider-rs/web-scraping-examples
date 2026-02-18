@@ -14,7 +14,7 @@ const spider = new SpiderBrowser({
   captcha: "solve",
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://search.jd.com/Search?keyword=laptop&enc=utf-8");
 await page.content(12000);

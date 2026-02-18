@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.norwegian.com/en/booking/flight-offers/?D_City=OSL&A_City=BCN&D_Day=01&D_Month=202607&R_Day=08&R_Month=202607&AdultCount=1&ChildCount=0&InfantCount=0&TripType=1");
 await page.content(12000);

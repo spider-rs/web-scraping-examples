@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.hertz.com/rentacar/reservation/reviewmodify?pickupDate=06/01/2026&returnDate=06/05/2026&pickupLocation=LAXC01");
 await page.content(12000);

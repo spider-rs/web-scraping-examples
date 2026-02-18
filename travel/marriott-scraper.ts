@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.marriott.com/search/default.mi?roomCount=1&numAdultsPerRoom=2&destination=New+York+City");
 await page.content(12000);

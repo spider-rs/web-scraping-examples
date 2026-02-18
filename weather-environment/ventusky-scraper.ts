@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.ventusky.com/?p=40.713;-74.006;10&l=temperature-2m");
 await page.content(8000);

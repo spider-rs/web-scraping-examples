@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.rockauto.com/en/catalog/toyota,2020,camry,2.5l+l4,3447763,brakes,brake+pad,1684");
 

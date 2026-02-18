@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.hyatt.com/search/San-Francisco?checkinDate=2026-07-01&checkoutDate=2026-07-04");
 await page.content(10000);

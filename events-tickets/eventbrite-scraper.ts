@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.eventbrite.com/d/ca--san-francisco/tech-conferences/");
 await page.content(10000);

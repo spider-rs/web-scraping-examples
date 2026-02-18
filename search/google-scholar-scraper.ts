@@ -12,21 +12,22 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
   stealth: 2,
 });
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 
 await page.goto("https://scholar.google.com/scholar?q=machine+learning");
-await page.waitForSelector(".gs_r.gs_or.gs_scl", { timeout: 10000 });
+await page.content(10000);
 
-const papers = await page.evaluate(() => {
+const papers = await page.evaluate(`(() => {
   const items = document.querySelectorAll(".gs_r.gs_or.gs_scl");
-  return Array.from(items).map((item) => ({
+  return JSON.stringify(Array.from(items).map(item => ({
     title: item.querySelector(".gs_rt a")?.textContent || "",
     authors: item.querySelector(".gs_a")?.textContent || "",
     url: item.querySelector(".gs_rt a")?.getAttribute("href") || "",
-  }));
-});
+  })));
+})()`);
 
-console.log("Papers found:", papers.length);
-papers.slice(0, 5).forEach((p) => console.log(`- ${p.title}`));
+const parsed = JSON.parse(papers as string);
+console.log("Papers found:", parsed.length);
+parsed.slice(0, 5).forEach((p: { title: string }) => console.log(`- ${p.title}`));
 await spider.close();

@@ -12,7 +12,7 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://forecast.weather.gov/MapClick.php?lat=40.7128&lon=-74.0060");
 await page.content();

@@ -12,7 +12,7 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://catalog.data.gov/dataset?q=climate&sort=score+desc%2C+name+asc");
 await page.content();

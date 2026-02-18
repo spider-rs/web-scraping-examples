@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.delta.com/flight-search/search?cacheKeySuffix=a1&action=findFlights&tripType=ONE_WAY&departureDate=2026-07-15&returnDate=&origin=ATL&destination=LAX");
 await page.content(15000);

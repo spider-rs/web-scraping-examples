@@ -12,7 +12,7 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.mapquest.com/search/results?query=dentist&boundingBox=40.917577,-73.700272,40.477399,-74.259090");
 await page.content();

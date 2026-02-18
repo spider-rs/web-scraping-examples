@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.seatguru.com/airlines/United_Airlines/United_Airlines_Boeing_787-9_V2.php");
 await page.content(10000);

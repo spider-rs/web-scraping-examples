@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.cheapflights.com/flight-search/SFO-TYO/2026-08-01");
 await page.content(15000);

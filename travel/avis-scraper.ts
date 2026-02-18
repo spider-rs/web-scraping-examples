@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.avis.com/en/reserve?pickUpDate=2026-06-01&returnDate=2026-06-05&pickUpLocation=JFK");
 await page.content(12000);

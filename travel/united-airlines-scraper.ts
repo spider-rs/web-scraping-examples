@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.united.com/en/us/fsr/choose-flights?f=EWR&t=SFO&d=2026-08-01&tt=1&at=1&sc=7&px=1&taxng=1&newHP=True&clm=7&st=bestmatches");
 await page.content(15000);

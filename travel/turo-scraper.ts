@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://turo.com/us/en/search?location=Los+Angeles%2C+CA&startDate=2026-06-01&endDate=2026-06-05");
 await page.content(12000);

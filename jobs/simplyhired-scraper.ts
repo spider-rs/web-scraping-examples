@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.simplyhired.com/search?q=data+analyst&l=Boston%2C+MA");
 await page.content(10000);

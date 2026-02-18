@@ -14,7 +14,7 @@ const spider = new SpiderBrowser({
   captcha: "solve",
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.theladders.com/jobs/search-jobs?searchQuery=VP+Engineering");
 await page.content(10000);

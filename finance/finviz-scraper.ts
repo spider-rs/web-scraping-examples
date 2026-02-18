@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://finviz.com/screener.ashx?v=111&f=cap_largeover,fa_pe_u20");
 await page.content(10000);

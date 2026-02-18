@@ -15,7 +15,7 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
   stealth: 2,
 });
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 
 await page.goto(
@@ -26,9 +26,9 @@ await page.content(10000);
 const data = await page.evaluate(`(() => {
   const articles = [];
   document.querySelectorAll("article").forEach(el => {
-    const headline = el.querySelector("a.JtKRv")?.textContent?.trim()
-      || el.querySelector("h3 a, h4 a")?.textContent?.trim();
-    const source = el.querySelector(".vr1PYe")?.textContent?.trim();
+    const headline = el.querySelector("h3 a, h4 a")?.textContent?.trim()
+      || el.querySelector("a[href]")?.textContent?.trim();
+    const source = el.querySelector("time")?.parentElement?.querySelector("a, span")?.textContent?.trim();
     const time = el.querySelector("time")?.getAttribute("datetime");
     if (headline) articles.push({ headline, source, time });
   });

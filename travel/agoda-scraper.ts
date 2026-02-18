@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.agoda.com/search?city=17193&checkIn=2026-06-01&checkOut=2026-06-05");
 await page.content(12000);

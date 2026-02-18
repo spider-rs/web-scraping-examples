@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.cars.com/vehicledetail/e]22bf45-7e1a-4b3c-9c5f-1a2b3c4d5e6f/");
 

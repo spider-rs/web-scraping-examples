@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.trip.com/hotels/list?city=318&checkin=2026-06-01&checkout=2026-06-05");
 await page.content(12000);

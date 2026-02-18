@@ -14,7 +14,7 @@ import { SpiderBrowser } from "spider-browser";
 const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
 });
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 
 await page.goto("https://www.ebay.com/b/Apple-AirPods-Pro/80077/bn_7116427158");

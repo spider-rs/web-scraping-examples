@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.hostelworld.com/st/hostels/p/1/s?q=Bangkok&country=Thailand&dateFrom=2026-06-01&dateTo=2026-06-05");
 await page.content(10000);

@@ -14,7 +14,7 @@ const spider = new SpiderBrowser({
   captcha: "solve",
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://mobile.yangkeduo.com/search_result.html?search_key=phone+case");
 await page.content(12000);

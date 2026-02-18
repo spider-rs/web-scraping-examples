@@ -14,7 +14,7 @@ const spider = new SpiderBrowser({
   captcha: "solve",
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.fiverr.com/search/gigs?query=web+scraping&source=top-bar");
 await page.content(12000);

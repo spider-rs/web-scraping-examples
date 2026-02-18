@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.windy.com/40.713/-74.006?temp,40.713,-74.006,10");
 await page.content(8000);

@@ -12,7 +12,7 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.buildzoom.com/contractor/search?q=general+contractor&loc=San+Francisco%2C+CA");
 await page.content();

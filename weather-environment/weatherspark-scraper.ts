@@ -12,7 +12,7 @@ const spider = new SpiderBrowser({
   apiKey: process.env.SPIDER_API_KEY!,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://weatherspark.com/y/24586/Average-Weather-in-New-York-City-New-York-United-States-Year-Round");
 await page.content();

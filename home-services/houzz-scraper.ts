@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.houzz.com/professionals/general-contractor/los-angeles-ca-us-probr0-bo~t_11786~r_4849750");
 await page.content(10000);

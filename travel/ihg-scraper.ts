@@ -13,7 +13,7 @@ const spider = new SpiderBrowser({
   stealth: 2,
 });
 
-await spider.connect();
+await spider.init();
 const page = spider.page!;
 await page.goto("https://www.ihg.com/hotels/us/en/find-hotels/hotel-search?qDest=Miami&qCiD=01&qCiMy=052026&qCoD=04&qCoMy=052026");
 await page.content(12000);
