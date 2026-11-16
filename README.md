@@ -9,7 +9,7 @@ npm install
 SPIDER_API_KEY=sk-... npx tsx ecommerce/amazon-scraper.ts
 ```
 
-Get a free API key at [spider.cloud](https://spider.cloud).
+Get a free API key at [spider.cloud](https://spider.cloud). To see what one page returns before you sign up, paste its URL into the [Spider web scraper](https://spider.cloud/web-scraper/?utm_source=github&utm_medium=readme&utm_campaign=web-scraping-examples).
 
 ## Categories
 
